@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "cz": "git add . && git-cz",
+    "cz": "git add . && git-cz && git push",
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
