@@ -21,6 +21,7 @@ jobs:
       run: |
         npm install
         npm run build
+        mv public/ blog/
     - name: Prepare SSH
       run: >
         cd ~ && mkdir .ssh &&
@@ -35,5 +36,5 @@ jobs:
         ARGS: "-avz --delete"
         SOURCE: "public"
         REMOTE_HOST: ${{ secrets.ALIYUN_SERVER_HOST }}
-        REMOTE_USER: "root"
-        TARGET: "/usr/share/nginx/html/blog"
+        REMOTE_USER: "blog"
+        TARGET: "/usr/share/nginx/html"
