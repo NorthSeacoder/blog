@@ -4,11 +4,16 @@ date: {{date}}
 comment: 'valine'
 categories:
     - [算法]
+    - [算法, 刷题]
+    - [算法, 刷题, day-1]
 tags:
     - 91
     - 刷题
     - JS
+    - 数组
 ---
+
+## 题目描述
 
 ### 思路
 
