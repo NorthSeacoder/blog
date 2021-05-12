@@ -5,7 +5,7 @@ comment: 'valine'
 categories:
     - [算法]
     - [算法, 刷题]
-    - [算法, 刷题, day-1]
+    - [算法, 刷题, {{title}}]
 tags:
     - 91
     - 刷题
@@ -19,9 +19,14 @@ tags:
 
 ## 代码
 
+<details>
+    <summary>展开查看</summary>
+
 ```js
 
 ```
+
+</details>
 
 ## 复杂度分析
 

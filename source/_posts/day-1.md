@@ -23,6 +23,9 @@ https://leetcode-cn.com/problems/add-to-array-form-of-integer/
 
 ## 代码
 
+<details>
+    <summary>展开查看</summary>
+
 ```js
 /**
  * @param {number[]} num
@@ -34,12 +37,14 @@ var addToArrayForm = function (num, k) {
 };
 ```
 
+</details>
+
 ## 复杂度分析
 
 -   时间复杂度
 -   空间复杂度
 
-## 官方题解1
+## 官方题解 1
 
 ### 思路
 
@@ -48,6 +53,9 @@ var addToArrayForm = function (num, k) {
 -   注意当 k 的长度大于数组长度
 
 ### 代码
+
+<details>
+    <summary>展开查看</summary>
 
 ```javascript
 /**
@@ -76,6 +84,8 @@ var addToArrayForm = function (num, k) {
 };
 ```
 
+</details>
+
 **复杂度分析**
 
 令 n 为数组长度。
@@ -83,15 +93,20 @@ var addToArrayForm = function (num, k) {
 -   时间复杂度：O(max(n,logk))
 -   空间复杂度：O(1) 只用了常数量空间
 
-## 官方题解2
+## 官方题解 2
+
 ### 思路
+
 将整个加数 k 加入数组表示的数的最低位。
 
-上面的例子 123+912，我们把它表示成 [1,2,3+912]。然后，我们计算 3+912=9153+912=915。55 留在当前这一位，将 910/10=91以进位的形式加入下一位
+上面的例子 123+912，我们把它表示成 [1,2,3+912]。然后，我们计算 3+912=9153+912=915。55 留在当前这一位，将 910/10=91 以进位的形式加入下一位
+
 ### 代码
 
-```javascript
+<details>
+    <summary>展开查看</summary>
 
+```javascript
 /**
  * @param {number[]} num
  * @param {number} k
@@ -100,21 +115,22 @@ var addToArrayForm = function (num, k) {
 var addToArrayForm = function (num, k) {
     let res = [];
     let n = num.length;
-    for (let i = n - 1; i >= 0 || k > 0; i-- , k = Math.floor(k / 10)) {
+    for (let i = n - 1; i >= 0 || k > 0; i--, k = Math.floor(k / 10)) {
         if (i >= 0) k += num[i];
-        res.push(k % 10)
+        res.push(k % 10);
     }
 
     res.reverse();
-    return res
+    return res;
 };
-
 ```
 
+</details>
 
 **复杂度分析**
 
 令 n 为数组长度。
+
 -   时间复杂度：O(max(n,logk))
 -   空间复杂度：O(1) 只用了常数量空间
 
