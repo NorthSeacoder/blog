@@ -3,10 +3,8 @@ title: 1381. 设计一个支持增量操作的栈
 comment: valine
 categories:
     - - 算法
-    - - 算法
       - 刷题
-    - - 算法
-      - 刷题
+      - days
       - day-3
 tags:
     - 91

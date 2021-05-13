@@ -2,9 +2,10 @@
 title: 989. 数组形式的整数加法
 comment: valine
 categories:
-    - [算法]
-    - [算法, 刷题]
-    - [算法, 刷题, day-1]
+    # - [算法]
+    # - [算法, 刷题]
+    # - [算法, 刷题,days]
+    - [算法, 刷题,days, day-1]
 tags:
     - 91
     - 刷题

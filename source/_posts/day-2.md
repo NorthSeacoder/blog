@@ -3,10 +3,8 @@ title: 821. 字符的最短距离
 comment: valine
 categories:
     - - 算法
-    - - 算法
       - 刷题
-    - - 算法
-      - 刷题
+      - days
       - day-2
 tags:
     - 91

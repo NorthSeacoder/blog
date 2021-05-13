@@ -2,7 +2,7 @@
 title: array-1
 comment: valine
 categories:
-  - 算法
+  - [算法, 刷题,extra,arrays]
 tags:
   - 91
   - 刷题

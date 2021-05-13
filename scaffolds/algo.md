@@ -3,9 +3,7 @@ title: {{title}}
 date: {{date}}
 comment: 'valine'
 categories:
-    - [算法]
-    - [算法, 刷题]
-    - [算法, 刷题, {{title}}]
+    - [算法, 刷题, days, {{title}}]
 tags:
     - 91
     - 刷题
