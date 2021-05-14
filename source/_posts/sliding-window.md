@@ -1,5 +1,5 @@
 ---
-title: 深度优先搜索
+title: 滑动窗口
 comment: valine
 categories:
   - - 算法
@@ -8,6 +8,6 @@ tags:
   - 91
   - 算法
   - JS
-  - dfs
-date: 2021-05-14 08:47:47
+  - 滑动窗口
+date: 2021-05-14 08:56:09
 ---
