@@ -1,5 +1,5 @@
 ---
-title: queue-base
+title: q队列
 comment: valine
 categories:
   - - 算法
