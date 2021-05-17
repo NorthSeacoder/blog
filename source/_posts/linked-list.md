@@ -257,8 +257,10 @@ var getIntersectionNode = function (headA, headB) {
     return a;
 };
 ```
+
 时间复杂度：O(N)
 空间复杂度：O(1)
+
 </details>
 
 #### 环形链表求环的起点
@@ -266,17 +268,89 @@ var getIntersectionNode = function (headA, headB) {
 <details>
     <summary>解法一:哈希法</summary>
 
-```js
+-   遍历整个链表,同时将每个节点都插入哈希表,
+-   如果当前节点在哈希表中不存在,继续遍历,
+-   如果存在,那么当前节点就是环的入口节点
 
+```js
+let data = new Set();
+while (head) {
+    if (data.has(head)) {
+        return head;
+    } else {
+        data.add(head);
+    }
+    head = head.next;
+}
+return null;
 ```
+
+时间复杂度：O(N)
+空间复杂度：O(N)
 
 </details>
 
 <details>
-    <summary>解法一:哈希法</summary>
+    <summary>解法一:快慢指针法</summary>
+
+-   定义一个 fast 指针,每次前进两步,一个 slow 指针,每次前进一步
+
+-   当两个指针相遇时
+    -   将 fast 指针指向链表头部,同时 fast 指针每次只前进一步
+    -   slow 指针继续前进,每次前进一步
+-   当两个指针再次相遇时,当前节点就是环的入口
+
+原因:
+
+-   第一次相遇时
+    -   设慢指针绕环 n1 周,快指针 n2 周,头结点到环入口距离为 A,环入口到相遇点距离为 B
+    -   慢指针移动的距离为 s1 = A + B + n1 \* L
+    -   快指针移动的距离为 s2 = A + B + n2 \* L
+    -   快指针是慢指针速度的两倍,所以 s2 = 2\* s1
+    -   A + B + n2 _ L = 2A + 2B + n1 _ L ===> A = -B + (n2 - n1) \* L
+    -   因为圆的性质 (n2 - n1) \* L ===> 绕圆 (n2 - n1) 圈 ===> 0
+    -   A = -B + (n2 - n1) \* L ===> A = -B
+    -   即在第一次相遇点, 向前走 A 步 ===> 向后走 B 步(会到达同一节点)
+-   第一次相遇后
+    -   快指针从头节点走 A 步会到达环的入口
+    -   慢指针从第一次相遇点走 A 步,相当于向后走 B 步,也会到达环的入口
 
 ```js
-
+if (head == null || head.next == null) return null;
+let fast = (slow = head);
+do {
+    if (fast != null && fast.next != null) {
+        fast = fast.next.next;
+    } else {
+        fast = null;
+    }
+    slow = slow.next;
+} while (fast != slow);
+if (fast == null) return null;
+fast = head;
+while (fast != slow) {
+    fast = fast.next;
+    slow = slow.next;
+}
+return fast;
 ```
 
+时间复杂度：O(N)
+空间复杂度：O(1)
+
 </details>
+
+## 相关问题
+
+-   合并两个有序链表
+-   删除排序链表中的重复元素 II
+-   删除排序链表中的重复元素
+-   分隔链表
+-   反转链表 II
+-   复制带随机指针的链表
+-   环形链表
+-   环形链表 II
+-   重排链表
+-   排序链表
+-   反转链表
+-   回文链表

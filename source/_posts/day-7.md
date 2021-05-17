@@ -74,7 +74,7 @@ var rotateRight = function (head, k) {
 
 ### 思路
 
--
+- 找到第 k 个节点并将后面右移
 
 ### 关键点
 
