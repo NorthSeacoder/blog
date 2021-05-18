@@ -88,6 +88,24 @@ var maxChunksToSorted = function (arr) {
 
 ### 思路
 
+-   前缀和
+
+### 关键点
+
+-
+
+### 代码
+
+<details>
+    <summary>展开查看</summary>
+
+```js
+
+```
+
+</details>
+### 思路
+
 -   滑动窗口
 
 ### 关键点
