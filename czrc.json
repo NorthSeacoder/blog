@@ -1,3 +1,4 @@
 {
-    "defaultScope":"blog"
+    "defaultScope": "aliyun-web",
+    "scopes": [{"name": "Blog", "value": "blog"}]
 }

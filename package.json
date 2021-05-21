@@ -1,33 +1,27 @@
 {
-  "name": "nsc-blog",
+  "name": "aliyun-web",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "cz": "git add . && git-cz && git push",
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "deploy": "hexo deploy",
-    "dev": "hexo server"
+    "cz": "git add . && git-cz",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "hexo": {
-    "version": "5.4.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NorthSeacoder/aliyun-web.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NorthSeacoder/aliyun-web/issues"
+  },
+  "homepage": "https://github.com/NorthSeacoder/aliyun-web#readme",
   "devDependencies": {
-    "@nsea/cz": "0.0.2",
-    "commitizen": "^4.1.5"
-  },
-  "dependencies": {
-    "hexo": "^5.0.0",
-    "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-category": "^1.0.0",
-    "hexo-generator-index": "^2.0.0",
-    "hexo-generator-tag": "^1.0.0",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^4.0.0",
-    "hexo-renderer-stylus": "^2.0.0",
-    "hexo-server": "^2.0.0",
-    "hexo-theme-fluid": "^1.8.9-a",
-    "hexo-theme-landscape": "^0.0.3"
+    "@actions/core": "^1.2.7",
+    "@nsea/cz": "^0.0.6",
+    "commitizen": "^4.2.4"
   },
   "config": {
     "commitizen": {
