@@ -8,10 +8,7 @@ jobs:
       - name: Install
         run: npm install 
       - name: get scope
-        run: node scripts/getscope.js
-      - name: show env
-        run: echo "$SCOPE"
-        
+        run: node scripts/getscope.js 
       - name: Deploy to aliyun server
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
