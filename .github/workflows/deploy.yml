@@ -14,7 +14,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ALIYUN_SERVER_ACCESS_TOKEN }}
           ARGS: "-avz --delete"
-          SOURCE: "projects/blog/${{env.SCOPE}}/public/"
+          SOURCE: "projects/${{env.SCOPE}}/${{env.SCOPE}}"
           REMOTE_HOST: ${{ secrets.ALIYUN_SERVER_HOST }}
           REMOTE_USER: "root"
-          TARGET: "/usr/share/nginx/html/${{env.SCOPE}}"
+          TARGET: "/usr/share/nginx/html
