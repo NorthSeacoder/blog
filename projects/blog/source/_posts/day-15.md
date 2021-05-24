@@ -14,6 +14,7 @@ tags:
     - 二叉树
     - dfs
     - bfs
+    - 路径
 date: 2021-05-24 09:23:58
 ---
 
@@ -70,11 +71,7 @@ var sumNumbers = function (root) {
 
 ### 思路
 
--
-
-### 关键点
-
--
+- bfs
 
 ### 代码
 
@@ -82,7 +79,32 @@ var sumNumbers = function (root) {
     <summary>展开查看</summary>
 
 ```js
-
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var sumNumbers = function (root) {
+    let sum = 0;
+    const queue = [[root,root.val]];
+    while(queue.length){
+        let [node,curSum] = queue.shift();
+        if(!node.left&&!node.right){
+            sum+=curSum
+        }else{
+            node.left&&queue.push([node.left,curSum*10+node.left.val])
+            node.right&&queue.push([node.right,curSum*10+node.right.val])
+        }
+    }
+    return sum
+};
 ```
 
 </details>
