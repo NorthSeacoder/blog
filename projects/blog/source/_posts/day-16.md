@@ -66,18 +66,14 @@ var findBottomLeftValue = function (root) {
 
 ## 复杂度分析
 
-- 时间复杂度：O(n)
-- 空间复杂度：O(h)
+-   时间复杂度：O(n)
+-   空间复杂度：O(h)
 
 ## 推荐题解
 
 ### 思路
 
--
-
-### 关键点
-
--
+-   bfs
 
 ### 代码
 
@@ -85,7 +81,33 @@ var findBottomLeftValue = function (root) {
     <summary>展开查看</summary>
 
 ```js
-
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var findBottomLeftValue = function (root) {
+    let curLevel = [root];
+    let res = root.val;
+    while (curLevel.length) {
+        const len = curLevel.length;
+        const nextLevel = [];
+        for (let i = 0; i < len; i++) {
+            curLevel[i].left && nextLevel.push(curLevel[i].left);
+            curLevel[i].right && nextLevel.push(curLevel[i].right);
+        }
+        res = curLevel[0].val;
+        curLevel = nextLevel;
+    }
+    return res;
+};
 ```
 
 </details>
