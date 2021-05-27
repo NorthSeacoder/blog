@@ -24,6 +24,6 @@ core.exportVariable('SCOPE', scope);
 
 // core.exportVariable('DEPLOY', scope);
 
-// shell.cd(`projects/${scope}`)
+shell.cd(`projects/${scope}`)
 log(green(`开始安装依赖并 build`));
-// shell.exec('npm run ali:build')
+shell.exec('npm run ali:build')
