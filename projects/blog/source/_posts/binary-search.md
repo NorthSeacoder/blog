@@ -147,3 +147,50 @@ function bisect_left(nums, target) {
 ```
 
 </details>
+
+### 寻找最右插入位置
+
+将寻找最右插入位置看成是寻找最左满足大于 x 的值
+
+<details>
+    <summary>展开查看</summary>
+
+```js
+function bisect_right(nums, target) {
+    let left = 0;
+    let right = nums.length - 1;
+    while (left <= right) {
+        const mid = (left + (right - left)) >> 2;
+        if (nums[mid] > target) {
+            // 搜索区间变为 [left, mid - 1]
+            right = mid - 1;
+        }
+
+        if (nums[mid] <= target) {
+            // 搜索区间变为 [mid+1, right]
+            left = mid + 1;
+        }
+    }
+    // 检查是否越界
+    if (left >= nums.length) return -1;
+    return left;
+}
+```
+
+</details>
+
+#### 最左最右总结
+
+最左二分不断收缩右边界，最终返回左边界
+
+最右二分不断收缩左边界，最终返回右边界
+
+### 局部有序（先降后升或先升后降）
+- 找 mid 判断在有序范围还是无序范围
+
+## 应用
+### 能力检测二分
+定义函数 possible， 参数是 mid，返回值是布尔值。外层根据返回值调整"解空间"。
+### 计数二分 
+### 前缀和二分
+### 插入排序二分
